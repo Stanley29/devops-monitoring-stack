@@ -6,4 +6,5 @@ resources:
   - ../../infrastructure/monitoring/loki
   - ../../infrastructure/monitoring/fluentbit
   - ../../infrastructure/observability/otel-operator
+  - ../../infrastructure/monitoring/repositories
 
