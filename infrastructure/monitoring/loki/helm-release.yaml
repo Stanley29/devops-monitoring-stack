@@ -19,3 +19,16 @@ spec:
     persistence:
       enabled: true
       size: 1Gi
+    affinity:
+      podAntiAffinity:
+        preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - loki
+              topologyKey: "kubernetes.io/hostname"
+
