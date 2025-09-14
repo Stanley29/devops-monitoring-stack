@@ -19,6 +19,12 @@ spec:
     persistence:
       enabled: true
       size: 1Gi
+    backend:
+      replicas: 1
+    read:
+      replicas: 1
+    write:
+      replicas: 1
     affinity:
       podAntiAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:
@@ -31,4 +37,5 @@ spec:
                     values:
                       - loki
               topologyKey: "kubernetes.io/hostname"
+
 
